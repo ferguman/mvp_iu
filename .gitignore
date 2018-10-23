@@ -1,0 +1,12 @@
+*.pyc
+*.swp
+*.log
+*.svg
+__pycache__/
+logs/*.*
+!logs/.gitkeep
+config/*.*
+!config/.gitkeep
+pictures/*.*
+!pictures/.gitkeep
+venv/
