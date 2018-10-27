@@ -70,8 +70,13 @@ def start():
     # create a new picture and place it in the local file location
     snap(file_location)
 
-    # if state and time_to_upload():
-    if picture_trigger == now.strftime('%H:%M'):
+    # if the picture_trigger pattern is such as to indicate a picture upload is desired
+    # then upload the picture to the fop cloud.
+    if picture_trigger == 'always' or\
+       picture_trigger == now.strftime('%H:%M'):
+
         upload_camera_image(now, file_location, upload_url, camera_id)
+
+    #TODO - provide a picture delete function to delete old pictures in the picture_directory
 
     logger.info('Exiting camera controller.')
